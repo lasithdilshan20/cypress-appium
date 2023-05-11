@@ -1,0 +1,25 @@
+{
+  "dependencies": {
+    "cypress": "^12.11.0"
+  },
+  "name": "cypress-appium",
+  "version": "1.0.0",
+  "main": "cypress.config.js",
+  "devDependencies": {
+    "webdriverio": "^8.10.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lasithdilshan20/cypress-appium.git"
+  },
+  "author": "Lasitha W",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lasithdilshan20/cypress-appium/issues"
+  },
+  "homepage": "https://github.com/lasithdilshan20/cypress-appium#readme",
+  "description": ""
+}
