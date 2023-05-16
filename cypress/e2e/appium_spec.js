@@ -1,23 +1,23 @@
-const webdriver = require('webdriverio');
+const { remote } = require('webdriverio');
 
-const opts = {
-  path: '/wd/hub',
-  port: 4723,
-  capabilities: {
-    platformName: 'Android',
-      deviceName: 'Pixel_3a_API_33_x86_64',
-    browserName: 'Chrome',
-  },
+const capabilities = {
+  platformName: 'Android',
+  'appium:automationName': 'UiAutomator2',
+  'appium:deviceName': 'Pixel 6 Pro API 33',
+  'appium:appPackage': 'com.android.chrome',
+  'appium:appActivity': 'com.google.android.apps.chrome.Main',
 };
 
-async function main() {
-  const client = await webdriver.remote(opts);
+const wdOpts = {
+  host: process.env.APPIUM_HOST || 'localhost',
+  port: parseInt(process.env.APPIUM_PORT, 10) || 4723,
+  logLevel: 'info',
+  capabilities,
+};
 
-  await client.url('https://www.google.com');
-
-  // Other test steps here
-
-  await client.deleteSession();
+async function runTest() {
+  const driver = await remote(wdOpts);
+    await driver.url('https://www.google.com');
 }
 
-main();
+runTest().catch(console.error);
